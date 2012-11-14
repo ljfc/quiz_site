@@ -11,6 +11,15 @@ end
 
 module QuizSite
   class Application < Rails::Application
+
+    config.generators do |g|
+      g.template_engine :leoc_erb
+      # Because ActiveAdmin uses inherited_resources_controller, we have to specify:
+      g.scaffold_controller :scaffold_controller 
+      g.stylesheets false
+      g.helper false
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
