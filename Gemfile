@@ -7,11 +7,12 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 
+gem 'debugger'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  #gem 'sass-rails',   '~> 3.2.3' # A different version is specified by ActiveAdmin.
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -22,17 +23,16 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# Authorisation
+gem 'cancan'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+# Administration
+gem 'activeadmin'
+# Required for ActiveAdmin where Rails >= 3.1
+gem 'sass-rails'
+gem 'meta_search', '>= 1.1.0.pre'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+# Console improvements
+gem 'awesome_print'
+gem 'hirb'
+gem 'wirble'

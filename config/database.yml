@@ -12,10 +12,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: quiz_site_development
+  database: quiz_dev
   pool: 5
-  username: root
-  password:
+  username: quiz_dev
+  password: af2hed5k
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,18 +25,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: quiz_site_test
+  database: quiz_test
   pool: 5
-  username: root
-  password:
+  username: quiz_test
+  password: af2hed5k
   socket: /tmp/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: quiz_site_production
+  database: quiz_prod
   pool: 5
-  username: root
-  password:
+  username: quiz_prod
+  password: af2hed5k
   socket: /tmp/mysql.sock
