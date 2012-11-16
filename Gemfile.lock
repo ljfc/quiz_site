@@ -50,13 +50,6 @@ GEM
       thor
     builder (3.0.4)
     cancan (1.6.8)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.4.0)
     columnize (0.3.6)
     debugger (1.2.1)
       columnize (>= 0.3.1)
@@ -162,8 +155,8 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   awesome_print
+  bcrypt-ruby (~> 3.0.0)
   cancan
-  coffee-rails (~> 3.2.1)
   debugger
   hirb
   jquery-rails

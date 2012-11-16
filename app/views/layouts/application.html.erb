@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>QuizSite</title>
+  <title><%= yield(:title) || "Default Title" %> • SiteName</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div id="flash_messages">
+    <% [:notice, :alert].each do |key| -%>
+      <% if flash[key] -%>
+        <div class="flash_message message_<%= key %>">
+          <%= flash[key] %>
+        </div>
+      <% end -%>
+    <% end -%>
+  </div>
+
+  <div id="overlay">
+    <div id="dialog">
+
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <ul id="authentication">
+        <% if current_user -%>
+          <li><%= t :logged_in_as, user: current_user.email.to_s %></li>
+          <li><%= link_to t(:log_out), logout_path %></li>
+        <% else -%>
+          <li><%= link_to t(:sign_up), signup_path %></li>
+          <li><%= link_to t(:log_in), login_path %></li>
+        <% end -%>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="page">
+    <%= yield %>
+  </div>
+
+  <footer>
+    <nav>
+
+    </nav>
+  </footer>
 
 </body>
 </html>

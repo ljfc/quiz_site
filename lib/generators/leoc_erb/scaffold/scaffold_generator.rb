@@ -26,9 +26,15 @@ module LeocErb
       def available_views
         %W{
           index.html.erb
+          index.js.erb
           edit.html.erb
+          edit.js.erb
           show.html.erb
+          show.js.erb
           new.html.erb
+          new.js.erb
+          create.js.erb
+          destroy.js.erb
           _form.html.erb
         }
       end

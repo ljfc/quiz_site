@@ -1,13 +1,15 @@
-<!-- LEOC custom template -->
-<p id="notice"><%%= notice %></p>
+<div class="object <%= singular_table_name %>" data-object-class="<%= singular_table_name %>" data-object-id="<%%= <%= singular_table_name %>.to_param %>">
 
 <% attributes.each do |attribute| -%>
-<p>
-  <b><%= attribute.human_name %>:</b>
-  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-</p>
+  <div>
+    <%= attribute.human_name %>:
+    <span class="attribute" data-attribute-name="<%= attribute.name %>">
+      <%%= <%= singular_table_name %>.<%= attribute.name %> %>
+    </span>
+  </div>
 
 <% end -%>
+  <%%= link_to t('.edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), remote: true %>
 
-<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |
-<%%= link_to 'Back', <%= index_helper %>_path %>
+</div>
+

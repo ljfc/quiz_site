@@ -1,0 +1,4 @@
+$('.object.<%= singular_table_name %>').filter(function() {
+  return $(this).data('object-id') == '<%%= @<%= singular_table_name %>.to_param %>'
+}).replaceWith('<%%= escape_javascript(render(@<%= singular_table_name %>)) %>');
+hideDialog();

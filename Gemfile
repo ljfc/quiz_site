@@ -13,7 +13,7 @@ gem 'debugger'
 # in production environments by default.
 group :assets do
   #gem 'sass-rails',   '~> 3.2.3' # A different version is specified by ActiveAdmin.
-  gem 'coffee-rails', '~> 3.2.1'
+  #gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -25,6 +25,7 @@ gem 'jquery-rails'
 
 # Authorisation
 gem 'cancan'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Administration
 gem 'activeadmin'

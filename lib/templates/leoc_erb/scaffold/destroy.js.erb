@@ -1,0 +1,3 @@
+$('.object.<%= singular_table_name %>').filter(function() {
+  return $(this).data('object-id') == '<%%= @<%= singular_table_name %>.to_param'
+}).slideUp();

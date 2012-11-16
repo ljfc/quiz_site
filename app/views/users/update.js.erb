@@ -1,0 +1,2 @@
+$('.object.user').filter(function() { return $(this).data('object-id') == '<%= @user.to_param %>' }).replaceWith('<%= escape_javascript(render(@user)) %>');
+hideDialog();

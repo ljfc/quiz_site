@@ -1,0 +1,7 @@
+<h1>Listing users</h1>
+
+<div class="objects users" data-objects-class="user">
+  <%= render @users %>
+</div>
+
+<%= link_to I18n.t(:new), new_user_path, remote: true %>

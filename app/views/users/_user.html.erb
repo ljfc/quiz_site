@@ -1,0 +1,20 @@
+<div class="object user" data-object-class="user" data-object-id="<%= user.to_param %>">
+
+  <div>
+    Email:
+    <span class="attribute" data-attribute-name="email">
+      <%= user.email %>
+    </span>
+  </div>
+
+  <div>
+    Password digest:
+    <span class="attribute" data-attribute-name="password_digest">
+      <%= user.password_digest %>
+    </span>
+  </div>
+
+  <%= link_to t('.edit'), edit_user_path(user), remote: true %>
+
+</div>
+
