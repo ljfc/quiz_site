@@ -2,7 +2,7 @@
 
 <% attributes.each do |attribute| -%>
   <div>
-    <%= attribute.human_name %>:
+    <%%= t '.<%= attribute.name %>', default: :'activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>' %>:
     <span class="attribute" data-attribute-name="<%= attribute.name %>">
       <%%= <%= singular_table_name %>.<%= attribute.name %> %>
     </span>

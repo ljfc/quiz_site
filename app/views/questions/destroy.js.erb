@@ -1,0 +1,6 @@
+<%= javascript_flash_messages %>
+
+$('.object.question').filter(function() {
+  return $(this).data('object-id') == '<%= @question.to_param %>'
+}).slideUp();
+hideDialog();

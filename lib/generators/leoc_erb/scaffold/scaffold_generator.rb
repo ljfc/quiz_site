@@ -29,6 +29,7 @@ module LeocErb
           index.js.erb
           edit.html.erb
           edit.js.erb
+          update.js.erb
           show.html.erb
           show.js.erb
           new.html.erb

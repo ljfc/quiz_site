@@ -4,4 +4,4 @@
   <%%= render @<%= plural_table_name %> %>
 </div>
 
-<%%= link_to I18n.t(:new), new_<%= singular_table_name %>_path, remote: true, if can? :new, <%= class_name %> %>
+<%%= link_to t('.new'), new_<%= singular_table_name %>_path, remote: true if can? :new, <%= class_name %> %>

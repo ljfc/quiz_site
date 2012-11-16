@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115095234) do
+ActiveRecord::Schema.define(:version => 20121116183304) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,27 @@ ActiveRecord::Schema.define(:version => 20121115095234) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "questions", :force => true do |t|
+    t.integer  "quiz_id"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "questions", ["quiz_id"], :name => "index_questions_on_quiz_id"
+
+  create_table "quizzes", :force => true do |t|
+    t.string   "name"
+    t.integer  "owner_id"
+    t.text     "introduction"
+    t.boolean  "featured"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "quizzes", ["featured"], :name => "index_quizzes_on_featured"
+  add_index "quizzes", ["owner_id"], :name => "index_quizzes_on_owner_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

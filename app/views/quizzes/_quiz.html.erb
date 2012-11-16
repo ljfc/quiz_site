@@ -1,0 +1,34 @@
+<div class="object quiz" data-object-class="quiz" data-object-id="<%= quiz.to_param %>">
+
+  <div>
+    <%= t '.name', default: :'activerecord.attributes.quiz.name' %>:
+    <span class="attribute" data-attribute-name="name">
+      <%= quiz.name %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.owner', default: :'activerecord.attributes.quiz.owner' %>:
+    <span class="attribute" data-attribute-name="owner">
+      <%= quiz.owner.email %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.introduction', default: :'activerecord.attributes.quiz.introduction' %>:
+    <span class="attribute" data-attribute-name="introduction">
+      <%= quiz.introduction %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.featured', default: :'activerecord.attributes.quiz.featured' %>:
+    <span class="attribute" data-attribute-name="featured">
+      <%= quiz.featured %>
+    </span>
+  </div>
+
+  <%= link_to t('.edit'), edit_quiz_path(quiz), remote: true if can? :edit, quiz %>
+
+</div>
+

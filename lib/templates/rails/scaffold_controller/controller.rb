@@ -5,6 +5,7 @@ require_dependency "<%= namespaced_file_path %>/application_controller"
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
   load_and_authorize_resource
+  respond_to :html, :js
 
   def new
     respond_with @<%= singular_table_name %>

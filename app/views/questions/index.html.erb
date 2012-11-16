@@ -1,0 +1,7 @@
+<%= heading t('.title') %>
+
+<div class="objects questions" data-objects-class="question">
+  <%= render @questions %>
+</div>
+
+<%= link_to t('.new'), new_quiz_question_path(@quiz), remote: true if can? :new, Question %>

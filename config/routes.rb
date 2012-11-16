@@ -1,4 +1,9 @@
 QuizSite::Application.routes.draw do
+
+  resources :quizzes do
+    resources :questions
+  end
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

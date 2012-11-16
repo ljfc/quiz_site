@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+      question:
+        text: 'Question'
+  questions:
+    index:
+      title: 'Quiz questions'
+      new: 'Add a new question'
+    new:
+      title: 'New quiz question'

@@ -1,0 +1,4 @@
+<%= javascript_flash_messages %>
+
+$('.objects.quizzes').append('<%= escape_javascript(render(@quiz)) %>').slideDown();
+hideDialog();

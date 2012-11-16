@@ -1,4 +1,3 @@
-# LEOC custom migration
 class <%= migration_class_name %> < ActiveRecord::Migration
 <%- if migration_action == 'add' -%>
   def change

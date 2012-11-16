@@ -1,0 +1,13 @@
+#flash_messages {
+  .flash_message {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    &.message_notice {
+      background: green;
+    }
+    &.message_alert {
+      background: red;
+    }
+  }
+}

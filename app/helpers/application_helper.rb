@@ -18,4 +18,16 @@ module ApplicationHelper
     css_classes
   end
 
+  def javascript_flash_messages
+    # Javascript in flash_messages.js is used to display flash messages created in remote actions.
+    [:notice, :alert].each do |key|
+      if flash[key]
+        message = flash[key]
+        flash.discard key # So it doesn't show up on the next page refresh.
+        return "flash_message_#{key.to_s}('#{message}');".html_safe
+      end
+    end
+    return "".html_safe # Otherwise the [:notice, ...] array gets returned and the script fails.
+  end
+
 end

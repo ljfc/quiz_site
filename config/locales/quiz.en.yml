@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+      quiz:
+        name: 'Quiz name'
+        introduction: 'About this quiz'
+        featured: 'Show on homepage'
+  quizzes:
+    index:
+      title: 'Quizzes'
+      new: 'Add a new quiz'

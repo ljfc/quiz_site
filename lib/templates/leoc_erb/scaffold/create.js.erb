@@ -1,2 +1,4 @@
+<%%= javascript_flash_messages %>
+
 $('.objects.<%= plural_table_name %>').append('<%%= escape_javascript(render(@<%= singular_table_name %>)) %>').slideDown();
 hideDialog();
