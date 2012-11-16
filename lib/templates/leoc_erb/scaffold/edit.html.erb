@@ -1,7 +1,6 @@
-<!-- LEOC custom template -->
-<h1>Editing <%= singular_table_name %></h1>
+<%%= heading t('.title') %>
 
 <%%= render 'form' %>
 
-<%%= link_to 'Show', @<%= singular_table_name %> %> |
-<%%= link_to 'Back', <%= index_helper %>_path %>
+<%%= link_to t('.destroy'), @<%= singular_table_name %>, method: :delete, data: { confirm: t('.confirm_destruction') } %>
+<%%= link_to t('.cancel'), <%= index_helper %>_path, class: 'dialog-closer' %>

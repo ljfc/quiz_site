@@ -7,16 +7,29 @@ html.debug-css {
   header { background: #DDD; }
   footer { background: #DDD; }
 
+  .column {
+    border: 1px solid cyan;
+  }
+
+  #page section { background: #FFD; }
+  #page header { background: #DDA; }
+  #page footer { background: #DDA; }
 }
 
 @media screen and (max-width: 1200px) { // 1152 getting cramped, so 960 grid now.
-  background: #AAF;
+  html.debug-css {
+    background: #AAF;
+  }
 }
 
 @media screen and (max-width: 960px ) { // 960 won't fit, so halve it.
-  background: #AFA;
+  html.debug-css {
+    background: #AFA;
+  }
 }
 
 @media screen and (max-width: 480px) { // Now revert to single-column.
-  background: #FAA;
+  html.debug-css {
+    background: #FAA;
+  }
 }

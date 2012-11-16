@@ -14,3 +14,9 @@ $(document).on('click', '#overlay', function(e) {
 $(document).on('click', '#dialog', function(e) {
   e.stopPropagation();
 });
+
+// Close the dialog if they click on a cancellation button.
+$(document).on('click', '.dialog-closer', function(e) {
+  e.preventDefault();
+  hideDialog();
+});

@@ -1,6 +1,5 @@
-<!-- LEOC custom template -->
-<h1>New <%= singular_table_name %></h1>
+<%%= heading t('.title') %>
 
 <%%= render 'form' %>
 
-<%%= link_to 'Back', <%= index_helper %>_path %>
+<%%= link_to t('.cancel'), <%= index_helper %>_path, class: 'dialog-closer' %>

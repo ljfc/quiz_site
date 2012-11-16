@@ -9,7 +9,7 @@
   </div>
 
 <% end -%>
-  <%%= link_to t('.edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), remote: true %>
+  <%%= link_to t('.edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), remote: true if can? :edit, <%= singular_table_name %> %>
 
 </div>
 
