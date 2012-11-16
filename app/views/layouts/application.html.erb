@@ -5,8 +5,10 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%# Ensure mobile devices report their real resolution. %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body class="<%= body_classes %>">
 
   <div id="flash_messages">
     <% [:notice, :alert].each do |key| -%>

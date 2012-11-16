@@ -1,0 +1,22 @@
+// These styles only get applied when we need to see what's going on.
+html.debug-css {
+
+  // Show top-level elements against the browser background.
+  background: #AAA;
+  #page { background: #FFF; }
+  header { background: #DDD; }
+  footer { background: #DDD; }
+
+}
+
+@media screen and (max-width: 1200px) { // 1152 getting cramped, so 960 grid now.
+  background: #AAF;
+}
+
+@media screen and (max-width: 960px ) { // 960 won't fit, so halve it.
+  background: #AFA;
+}
+
+@media screen and (max-width: 480px) { // Now revert to single-column.
+  background: #FAA;
+}

@@ -12,4 +12,10 @@ module ApplicationHelper
     content_for :title, page_title
   end
 
+  def body_classes
+    css_classes = "#{controller_name} #{action_name} "
+    css_classes += "signed_in" if current_user
+    css_classes
+  end
+
 end

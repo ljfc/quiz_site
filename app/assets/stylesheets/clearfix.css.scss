@@ -1,0 +1,22 @@
+// Using the 'easy clearing' method to allow positioned elements to hang outside the bounds of the container - e.g. for popups or shadows.
+
+// Add classes which need a clearfix here.
+#page
+{
+  & {
+    display: inline-block;
+  }
+
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  & {
+    display: block;
+  }
+}

@@ -1,0 +1,17 @@
+// Copied from http://fonts.googleapis.com/css?family=Delius
+@font-face {
+  font-family: 'Delius';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Delius-Regular'), url(http://themes.googleusercontent.com/static/fonts/delius/v3/brLBPBAUw-PpA7n74Uo__uvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+
+//h1,
+//h2,
+//h3,
+//h4,
+//h5,
+//h6
+* {
+  font-family: 'Delius', cursive;
+}

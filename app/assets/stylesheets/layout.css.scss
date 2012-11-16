@@ -1,0 +1,64 @@
+// This is a responsive layout, based on screen resolution.
+
+// Default is for a nice big monitor, with columns side-by-side.
+// 1152 grid.
+#page,
+header,
+footer
+{
+  width: 1152px;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.column
+{
+  float: left;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) { // 1152 getting cramped, so 960 grid now.
+
+  #page,
+  header,
+  footer
+  {
+    width: 960px;
+  }
+
+}
+
+@media screen and (max-width: 960px ) { // 960 won't fit, so halve it and go single-column.
+
+  #page,
+  header,
+  footer
+  {
+    width: 480px;
+  }
+
+  .column
+  {
+    width: 100% !important; // Need to override ALL column widths.
+    float: none;
+  }
+  
+}
+
+@media screen and (max-width: 480px) { // Now revert to single-column.
+  
+  #page,
+  header,
+  footer
+  {
+    width: 100%;
+  }
+
+  .column
+  {
+    width: 100% !important; // Need to override ALL column widths.
+    float: none;
+  }
+
+}
