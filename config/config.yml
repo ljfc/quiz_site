@@ -1,0 +1,24 @@
+# Application-wide configuration.
+# As per:
+# http://railscasts.com/episodes/85-yaml-configuration-file
+
+
+development:
+  debug_info: true
+  visual_debug_info: true
+
+test:
+  debug_info: true
+  visual_debug_info: false
+
+acceptance:
+  debug_info: true
+  visual_debug_info: false
+
+staging:
+  debug_info: false
+  visual_debug_info: false
+
+production:
+  debug_info: false
+  visual_debug_info: false

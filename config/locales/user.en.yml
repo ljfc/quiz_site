@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        email: 'Email address'
+        password: 'Password'
+        password_confirmation: 'Type password again to confirm'
+  users:
+    new:
+      title: 'Sign up'

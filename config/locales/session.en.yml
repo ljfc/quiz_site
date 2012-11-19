@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      session:
+        email: 'Email address'
+        password: 'Password'
+  sessions:
+    new:
+      title: 'Log in'

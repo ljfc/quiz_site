@@ -1,5 +1,8 @@
-# Load the rails application
+# Load the rails application.
 require File.expand_path('../application', __FILE__)
 
-# Initialize the rails application
+# Additional application-wide configuration.
+APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")[Rails.env]
+
+# Initialize the rails application.
 QuizSite::Application.initialize!

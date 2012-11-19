@@ -32,3 +32,29 @@ section {
   h6 { font-size: 11px; }
 }
 
+// Links.
+a
+{
+  color: blue;
+
+  &:hover { color: #19D; }
+  &:active { color: #F4E; }
+  &:visited { color: #B0E; }
+}
+
+// Inverted links.
+body > header > nav
+{
+  a
+  {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: white;
+    }
+    &:active { color: red; }
+    &:visited { color: white; }
+  }
+}

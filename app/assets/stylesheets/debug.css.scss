@@ -3,17 +3,17 @@ html.debug-css {
 
   // Show top-level elements against the browser background.
   background: #AAA;
-  #page { background: #FFF; }
-  header { background: #DDD; }
+  .page { background: #FFF; }
+  header { background: black; }
   footer { background: #DDD; }
 
   .column {
     border: 1px solid cyan;
   }
 
-  #page section { background: #FFD; }
-  #page header { background: #DDA; }
-  #page footer { background: #DDA; }
+  .page section { background: #FFD; }
+  .page header { background: #DDA; }
+  .page footer { background: #DDA; }
 }
 
 @media screen and (max-width: 1200px) { // 1152 getting cramped, so 960 grid now.
