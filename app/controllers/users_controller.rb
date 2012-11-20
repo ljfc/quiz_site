@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
   def create
     if @user.save
-      flash[:notice] = I18n.t([:users, :create, :notice])
+      flash[:notice] = I18n.t('users.create.notice')
       session[:user_id] = @user.id # So they are logged in.
     end
     respond_with @user
@@ -26,12 +26,12 @@ class UsersController < ApplicationController
     respond_with @user
   end
   def update
-    flash[:notice] = I18n.t([:users, :update, :notice]) if @user.update_attributes(params[:user])
+    flash[:notice] = I18n.t('users.update.notice') if @user.update_attributes(params[:user])
     respond_with @user
   end
 
   def destroy
-    flash[:notice] = I18n.t([:users, :destroy, :notice]) if @user.destroy
+    flash[:notice] = I18n.t('users.destroy.notice') if @user.destroy
     respond_with @user
   end
 end

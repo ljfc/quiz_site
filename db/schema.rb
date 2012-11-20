@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121116183304) do
+ActiveRecord::Schema.define(:version => 20121119225521) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,13 +46,26 @@ ActiveRecord::Schema.define(:version => 20121116183304) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "possible_answers", :force => true do |t|
+    t.integer  "question_id"
+    t.text     "text"
+    t.boolean  "correct"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "possible_answers", ["question_id"], :name => "index_possible_answers_on_question_id"
+
   create_table "questions", :force => true do |t|
     t.integer  "quiz_id"
     t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "order",      :default => 0
+    t.text     "more_info"
   end
 
+  add_index "questions", ["order"], :name => "index_questions_on_order"
   add_index "questions", ["quiz_id"], :name => "index_questions_on_quiz_id"
 
   create_table "quizzes", :force => true do |t|
@@ -66,6 +79,21 @@ ActiveRecord::Schema.define(:version => 20121116183304) do
 
   add_index "quizzes", ["featured"], :name => "index_quizzes_on_featured"
   add_index "quizzes", ["owner_id"], :name => "index_quizzes_on_owner_id"
+
+  create_table "responses", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "answer_id"
+    t.text     "why"
+    t.string   "session_id"
+    t.integer  "rejected_by_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "responses", ["answer_id"], :name => "index_responses_on_answer_id"
+  add_index "responses", ["rejected_by_id"], :name => "index_responses_on_rejected_by_id"
+  add_index "responses", ["session_id"], :name => "index_responses_on_session_id"
+  add_index "responses", ["user_id"], :name => "index_responses_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

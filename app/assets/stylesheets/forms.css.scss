@@ -1,0 +1,16 @@
+form {
+  width: 100%;
+  box-sizing: border-box;
+
+  textarea,
+  input[type="text"]
+  {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  textarea
+  {
+    height: 96px;
+  }
+}

@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     respond_with @question
   end
   def create
-    flash[:notice] = I18n.t([:questions, :create, :notice]) if @question.save
+    flash[:notice] = I18n.t('questions.create.notice') if @question.save
     respond_with @question
   end
 
@@ -24,12 +24,12 @@ class QuestionsController < ApplicationController
     respond_with @question
   end
   def update
-    flash[:notice] = I18n.t([:questions, :update, :notice]) if @question.update_attributes(params[:question])
+    flash[:notice] = I18n.t('questions.update.notice') if @question.update_attributes(params[:question])
     respond_with @question
   end
 
   def destroy
-    flash[:notice] = I18n.t([:questions, :destroy, :notice]) if @question.destroy
+    flash[:notice] = I18n.t('questions.destroy.notice') if @question.destroy
     respond_with @question
   end
 end

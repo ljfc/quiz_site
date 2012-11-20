@@ -1,5 +1,5 @@
 <%= javascript_flash_messages %>
 
 hideDialog();
-$('#dialog').html('<%= escape_javascript(render(template: 'quizzes/edit', formats: [:html])) %>');
+$('.dialog').html('<%= escape_javascript(render(template: 'quizzes/edit', formats: [:html])) %>');
 showDialog();

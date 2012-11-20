@@ -4,3 +4,13 @@
 
 <%= link_to t('.destroy'), quiz_question_path(@question.quiz, @question), remote: true, method: :delete, confirm: t('.confirm_destruction', default: 'Are you sure you want to delete this?') %>
 <%= link_to t('.cancel'), quiz_questions_path(@quiz), class: 'dialog-closer' %>
+
+<h2>
+  <%= t('.possible_answers') %>
+</h2>
+
+<div class="objects possible_answers" data-objects-class="possible_answer">
+  <%= render @question.possible_answers %>
+</div>
+
+<%= link_to t('.new'), new_quiz_question_possible_answer_path(@question.quiz, @question), remote: true if can? :new, PossibleAnswer %>

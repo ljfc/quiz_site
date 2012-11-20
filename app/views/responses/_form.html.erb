@@ -1,0 +1,31 @@
+<%= form_for([@quiz, @question, @response]) do |f| %>
+  <% if @response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+      <% @response.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <ol class="answers">
+      <% @question.possible_answers.each do |possible_answer| -%>
+      <li>
+        <%= f.radio_button :answer_id, possible_answer.id %>
+        <%= f.label "answer_id_#{possible_answer.id.to_s}", possible_answer.text %>
+      </li>
+      <% end -%>
+    </ol>
+  </div>
+  <div class="field">
+    <%= f.label :why %><br />
+    <%= f.text_field :why %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

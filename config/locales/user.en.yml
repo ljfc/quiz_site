@@ -8,3 +8,11 @@ en:
   users:
     new:
       title: 'Sign up'
+    edit:
+      title: 'Edit user'
+    create:
+      notice: 'User created'
+    update:
+      notice: 'User updated'
+    destroy:
+      notice: 'User deleted'

@@ -1,0 +1,5 @@
+<%= heading t('.title') %>
+
+<%= render 'form' %>
+
+<%= link_to t('.cancel'), quiz_question_possible_answers_path(@possible_answer.question.quiz, @possible_answer.question), class: 'dialog-closer' %>

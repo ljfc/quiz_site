@@ -9,3 +9,15 @@ en:
     index:
       title: 'Quizzes'
       new: 'Add a new quiz'
+    new:
+      title: 'New quiz'
+    edit:
+      title: 'Edit quiz'
+      questions: 'Questions'
+      new_question: 'Add a question'
+    create:
+      notice: 'Quiz created'
+    update:
+      notice: 'Quiz updated'
+    destroy:
+      notice: 'Quiz deleted'

@@ -1,0 +1,43 @@
+.responses.new {
+  .page
+  {
+    padding-left: 222px;
+    padding-right: 222px;
+
+    h1
+    {
+      text-align: center;
+    }
+
+    .question
+    {
+      h1
+      {
+        text-align: left;
+        float: left;
+        background: white;
+        margin: 0px 0px -10px 0px;
+        position: relative;
+        top: -17px;
+        padding: 0px 12px;
+      }
+      .content
+      {
+        clear: both;
+        margin: 12px;
+      }
+    }
+
+    .answers
+    {
+      list-style: upper-alpha;
+    }
+
+    .actions
+    {
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+<%= heading t('.title') %>
+
+<%= render 'form' %>
+
+<%= link_to t('.destroy'), quiz_question_possible_answer_path(@possible_answer.question.quiz, @possible_answer.question, @possible_answer), remote: true, method: :delete, confirm: t('.confirm_destruction', default: 'Are you sure you want to delete this?') %>
+<%= link_to t('.cancel'), quiz_question_possible_answers_path(@possible_answer.question.quiz, @possible_answer.question), class: 'dialog-closer' %>

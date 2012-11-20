@@ -1,0 +1,41 @@
+<div class="object response" data-object-class="response" data-object-id="<%= response.to_param %>">
+
+  <div>
+    <%= t '.user', default: :'activerecord.attributes.response.user' %>:
+    <span class="attribute" data-attribute-name="user">
+      <%= response.user %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.answer', default: :'activerecord.attributes.response.answer' %>:
+    <span class="attribute" data-attribute-name="answer">
+      <%= response.answer %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.why', default: :'activerecord.attributes.response.why' %>:
+    <span class="attribute" data-attribute-name="why">
+      <%= response.why %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.session_id', default: :'activerecord.attributes.response.session_id' %>:
+    <span class="attribute" data-attribute-name="session_id">
+      <%= response.session_id %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.rejected_by', default: :'activerecord.attributes.response.rejected_by' %>:
+    <span class="attribute" data-attribute-name="rejected_by">
+      <%= response.rejected_by %>
+    </span>
+  </div>
+
+  <%= link_to t('.edit'), edit_response_path(response), remote: true if can? :edit, response %>
+
+</div>
+

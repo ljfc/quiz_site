@@ -3,3 +3,4 @@
 $('.object.quiz').filter(function() {
   return $(this).data('object-id') == '<%= @quiz.to_param %>'
 }).slideUp();
+hideDialog();

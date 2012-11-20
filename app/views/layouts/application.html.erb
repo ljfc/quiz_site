@@ -33,11 +33,11 @@
       </ul>
       <ul class="authentication">
         <% if current_user -%>
-          <li><%= t :logged_in_as, user: current_user.email.to_s %></li>
-          <li><%= link_to t(:log_out), logout_path %></li>
+          <li><%= t('.logged_in_as', user: current_user.email.to_s) %></li>
+          <li><%= link_to t('.log_out'), logout_path %></li>
         <% else -%>
-          <li><%= link_to t(:sign_up), signup_path %></li>
-          <li><%= link_to t(:log_in), login_path %></li>
+          <li><%= link_to t('.sign_up'), signup_path %></li>
+          <li><%= link_to t('.log_in'), login_path %></li>
         <% end -%>
       </ul>
     </nav>

@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    attributes:
+      possible_answer:
+        text: 'Answer text'
+        correct: 'This is the right answer'
+        question: 'In answer to'
+  possible_answers:
+    index:
+      title: 'Answers'
+    edit:
+      title: 'Edit answer'
+    create:
+      notice: 'Answer created'
+    update:
+      notice: 'Answer updated'
+    destroy:
+      notice: 'Answer deleted'

@@ -2,5 +2,15 @@
 
 <%= render 'form' %>
 
-<%= link_to t('.destroy'), @quiz, method: :delete, confirm: t('.confirm_destruction', default: 'Are you sure you want to delete this?') %>
+<%= link_to t('.destroy'), @quiz, method: :delete, remote: true, confirm: t('.confirm_destruction', default: 'Are you sure you want to delete this?') %>
 <%= link_to t('.cancel'), quizzes_path, class: 'dialog-closer' %>
+
+<h2>
+  <%= t('.questions') %>
+</h2>
+
+<div class="objects questions" data-objects-class="question">
+  <%= render @quiz.questions %>
+</div>
+
+<%= link_to t('.new_question'), new_quiz_question_path(@quiz), remote: true if can? :new, Question %>

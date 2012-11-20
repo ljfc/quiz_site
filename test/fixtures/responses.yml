@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  answer: 
+  why: MyText
+  session_id: MyString
+  rejected_by: 
+
+two:
+  user: 
+  answer: 
+  why: MyText
+  session_id: MyString
+  rejected_by: 

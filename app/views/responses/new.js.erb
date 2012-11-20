@@ -1,0 +1,5 @@
+<%= javascript_flash_messages %>
+
+hideDialog();
+$('#dialog').html('<%= escape_javascript(render(template: 'responses/new', formats: [:html])) %>');
+showDialog();

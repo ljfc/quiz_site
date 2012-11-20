@@ -1,0 +1,10 @@
+<%= heading t('.title', number: @question.order) %>
+
+<section class="question">
+  <%= content_tag :h1, t('.question') %>
+  <div class="content">
+    <%= simple_format @question.text %>
+  </div>
+</section>
+
+<%= render 'form' %>

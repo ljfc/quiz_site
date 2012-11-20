@@ -9,3 +9,11 @@ en:
       new: 'Add a new question'
     new:
       title: 'New quiz question'
+    edit:
+      title: 'Edit quiz question'
+    create:
+      notice: 'Question created'
+    update:
+      notice: 'Question updated'
+    destroy:
+      notice: 'Question deleted'

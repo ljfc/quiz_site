@@ -1,0 +1,6 @@
+<%= javascript_flash_messages %>
+
+$('.object.possible_answer').filter(function() {
+  return $(this).data('object-id') == '<%= @possible_answer.to_param %>'
+}).replaceWith('<%= escape_javascript(render(@possible_answer)) %>');
+hideDialog();

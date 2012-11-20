@@ -1,0 +1,6 @@
+<%= javascript_flash_messages %>
+
+$('.object.response').filter(function() {
+  return $(this).data('object-id') == '<%= @response.to_param %>'
+}).replaceWith('<%= escape_javascript(render(@response)) %>');
+hideDialog();

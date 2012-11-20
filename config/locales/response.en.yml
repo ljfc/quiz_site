@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    attributes:
+      response:
+        answer: 'Answer'
+        user: 'By'
+        why: 'Why do you think this is the answer?'
+        session_id: 'Session ID'
+        rejected_by: 'Subsequent new user who did not take ownership'
+  helpers:
+    submit:
+      response:
+        create: 'Submit answer'
+  responses:
+    index:
+      title: 'User Responses'
+    new:
+      title: 'Question %{number}'
+      question: 'Question'
+    create:
+      notice: 'Answer saved'

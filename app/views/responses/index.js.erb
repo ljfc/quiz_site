@@ -1,0 +1,3 @@
+<%= javascript_flash_messages %>
+
+$('#page').html('<%= escape_javascript(render(template: 'responses/index', formats: [:html])) %>');

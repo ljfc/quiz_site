@@ -1,16 +1,11 @@
 <div class="object question" data-object-class="question" data-object-id="<%= question.to_param %>">
 
   <div>
-    <%= t '.quiz', default: :'activerecord.attributes.question.quiz' %>:
-    <span class="attribute" data-attribute-name="quiz">
-      <%= question.quiz.name %>
+    <span class="attribute" data-attribute-name="order">
+      <%= question.order %>)
     </span>
-  </div>
-
-  <div>
-    <%= t '.text', default: :'activerecord.attributes.question.text' %>:
     <span class="attribute" data-attribute-name="text">
-      <%= question.text %>
+      <%= truncate(question.text, length: 50) %>
     </span>
   </div>
 

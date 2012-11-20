@@ -1,0 +1,19 @@
+<div class="object possible_answer" data-object-class="possible_answer" data-object-id="<%= possible_answer.to_param %>">
+
+  <div>
+    <%= t '.text', default: :'activerecord.attributes.possible_answer.text' %>:
+    <span class="attribute" data-attribute-name="text">
+      <%= possible_answer.text %>
+    </span>
+  </div>
+
+  <div>
+    <span class="attribute" data-attribute-name="correct">
+      (<%= possible_answer.correct? ? t('.correct') : t('.incorrect') %>)
+    </span>
+  </div>
+
+  <%= link_to t('.edit'), edit_quiz_question_possible_answer_path(possible_answer.question.quiz, possible_answer.question, possible_answer), remote: true if can? :edit, possible_answer %>
+
+</div>
+
