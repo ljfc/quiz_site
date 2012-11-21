@@ -7,14 +7,7 @@
     </span>
   </div>
 
-  <div>
-    Password digest:
-    <span class="attribute" data-attribute-name="password_digest">
-      <%= user.password_digest %>
-    </span>
-  </div>
-
-  <%= link_to t('.edit'), edit_user_path(user), remote: true %>
+  <%= link_to t('.edit'), edit_user_path(user), remote: true if can? :edit, user %>
 
 </div>
 

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       flash[:notice] = I18n.t('users.create.notice')
       session[:user_id] = @user.id # So they are logged in.
     end
-    respond_with @user
+    respond_with @user, location: root_path
   end
 
 
