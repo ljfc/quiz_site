@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
-  load_and_authorize_resource :quiz
-  load_and_authorize_resource :question, through: :quiz
+  load_resource :quiz
+  load_resource :question, through: :quiz
   load_and_authorize_resource # NOT through: :question, as the link is through the, perhaps unknown, possible_answer.
   respond_to :html, :js
 

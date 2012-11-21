@@ -13,7 +13,7 @@
 
   <div class="field">
     <ol class="answers">
-      <% @question.possible_answers.each do |possible_answer| -%>
+      <% @question.possible_answers.order('RAND()').each do |possible_answer| -%>
       <li>
         <%= f.radio_button :answer_id, possible_answer.id %>
         <%= f.label "answer_id_#{possible_answer.id.to_s}", possible_answer.text %>

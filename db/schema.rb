@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121104524) do
+ActiveRecord::Schema.define(:version => 20121121123301) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -94,6 +94,16 @@ ActiveRecord::Schema.define(:version => 20121121104524) do
   add_index "responses", ["rejected_by_id"], :name => "index_responses_on_rejected_by_id"
   add_index "responses", ["session_id"], :name => "index_responses_on_session_id"
   add_index "responses", ["user_id"], :name => "index_responses_on_user_id"
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "email"
