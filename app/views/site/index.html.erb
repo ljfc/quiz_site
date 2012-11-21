@@ -33,9 +33,11 @@
   </div>
 </div>
 
+<% if @first_quiz -%>
 <section class="row get-started">
   <h1>Ready for question 1?</h1>
   <%= link_to new_quiz_question_response_path(@first_quiz, @first_quiz.questions.first), class: 'button' do %>
     <i class="icon-circle-arrow-right"></i> Start!
   <% end -%>
 </section>
+<% end -%>

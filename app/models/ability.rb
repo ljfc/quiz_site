@@ -7,7 +7,6 @@ class Ability
     # Unprivileged users do everything via the response, pretty much, so that they can't accidentally see the answers, or other people's responses and so on.
     can :index, :site
     can [:new, :create], Response # To allow pre-sign-up quiz answering.
-    can [:new, :create], :session # To allow log in.
     can [:new, :create], User # To allow sign up.
 
     if !user.new_record? && user.regular? # Normal logged-in user.
