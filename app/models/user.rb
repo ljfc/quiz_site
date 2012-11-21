@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
 
   validates :email,
     uniqueness: true
+
+  def regular?
+    !self.admin? && !self.editor?
+  end
+
 end

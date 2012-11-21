@@ -3,33 +3,22 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    if user.new_record?
-      can :read, :all
-      can [:new, :create], User # To allow sign-up
-    else
+
+    # Unprivileged users do everything via the response, pretty much, so that they can't accidentally see the answers, or other people's responses and so on.
+    can :index, :site
+    can [:new, :create], Response # To allow pre-sign-up quiz answering.
+    can [:new, :create], Session # To allow log in.
+    can [:new, :create], User # To allow sign up.
+
+    if !user.new_record? && user.regular? # Normal logged-in user.
+      # Currently there isn't actually anything else for them to do beyond a logged out user.
+    elsif user.admin? # Straight-up superuser, nothing is forbidden.
       can :manage, :all
+    elsif user.editor? # Will need to create/update quizzes and related models.
+      can :manage, Quiz
+      can :manage, Question
+      can :manage, PossibleAnswer
     end
-    # Define abilities for the passed in user here. For example:
-    #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
-    #
-    # The first argument to `can` is the action you are giving the user permission to do.
-    # If you pass :manage it will apply to every action. Other common actions here are
-    # :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on. If you pass
-    # :all it will apply to every resource. Otherwise pass a Ruby class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+
   end
 end
