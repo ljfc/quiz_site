@@ -8,4 +8,9 @@ private
   end
   helper_method :current_user
 
+  def logout
+    session[:user_id] = nil
+    @current_user = nil
+  end
+
 end

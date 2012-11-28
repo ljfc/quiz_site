@@ -1,5 +1,5 @@
 <%%= javascript_flash_messages %>
 
 hideDialog();
-$('#dialog').html('<%%= escape_javascript(render(template: '<%= plural_table_name %>/new', formats: [:html])) %>');
+$('.dialog').html('<%%= escape_javascript(render(template: '<%= plural_table_name %>/new', formats: [:html])) %>');
 showDialog();

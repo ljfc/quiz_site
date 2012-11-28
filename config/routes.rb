@@ -1,5 +1,8 @@
 QuizSite::Application.routes.draw do
 
+
+  # Quizzes and associated models.
+
   resources :quizzes do
     resources :questions do
       resources :possible_answers
@@ -7,16 +10,26 @@ QuizSite::Application.routes.draw do
     end
   end
 
+
+  # Authentication.
+
   resources :users
+  resources :identities, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: 'sessions#failure'
+
+  get 'signup', to: 'identities#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+
+  # Utility routes.
 
   root to: 'site#index'
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  get 'signup', to: 'users#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
 
 end

@@ -26,9 +26,12 @@ end
 
 gem 'jquery-rails'
 
+# Authentication
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'omniauth-facebook'
+gem 'omniauth-identity' # For password-based login.
 # Authorisation
 gem 'cancan'
-gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Administration
 gem 'activeadmin'

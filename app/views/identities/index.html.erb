@@ -1,0 +1,7 @@
+<%= heading t('.title') %>
+
+<div class="objects identities" data-objects-class="identity">
+  <%= render @identities %>
+</div>
+
+<%= link_to t('.new'), new_identity_path, remote: true if can? :new, Identity %>

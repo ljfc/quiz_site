@@ -1,0 +1,52 @@
+// Styling used across different authentication screens.
+
+// Image replacement for login links.
+.third-party-logins {
+  padding: 0px;
+  .login {
+    display: block;
+    background: #EEE;
+    border-radius: 6px;
+    width: 90px;
+    height: 90px;
+    margin: 12px;
+    float: left;
+    text-align: center;
+    .logo {
+      overflow: hidden;
+      height: 0px;
+      display: block;
+      padding-top: 64px;
+      width: 64px;
+      background: blue;
+      border-radius: 6px;
+      margin: auto;
+    }
+    &.facebook {
+      .logo {
+        background: image-url('facebook_64.png');
+      }
+    }
+    &.developer {
+      .logo {
+        background: #ADA;
+        line-height: 48px;
+        width: 48px;
+        height: 48px;
+        padding-top: 0px;
+        box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+        margin: 8px auto;
+        font-family: monospace;
+        font-size: 9px;
+        color: black;
+        a { color: black;
+          text-decoration: none;
+          &:hover { color: black; }
+          &:visited { color: black; }
+          &:active { color: black; }
+        }
+      }
+    }
+  }
+}
+        

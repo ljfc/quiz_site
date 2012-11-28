@@ -1,0 +1,14 @@
+<%# Application-wide confirmation screen for deletion. %>
+<%# This only appears when Javascript is not used when clicking a delete link. %>
+
+<%= form_tag request.url, html: { method: :delete } do %>
+  <h2>
+    <%= t('.are_you_sure' %>
+  </h2>
+  <p>
+    <%= submit_tag t('.destroy') %>
+    <% if request.referrer.present? %>
+      or <%= link_to t('.cancel'), request.referer %>
+    <% end %>
+  </p>
+<% end %>

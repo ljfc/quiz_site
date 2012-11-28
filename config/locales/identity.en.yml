@@ -1,14 +1,23 @@
 en:
   activerecord:
     attributes:
-      session:
-        email: 'Email address'
+      identity:
+        unique_identifier: 'Email address' # If it's being entered manually, it's an email address.
         password: 'Password'
-  sessions:
-    new:
-      title: 'Log in'
-      auth_key: 'Email address'
+        password_confirmation: 'Type password again to confirm'
+  identities:
+    form:
       log_in_through_other_site_html: '<p>Do you already have an account on one of these sites? Click the logo to log in with it here:</p>'
       log_in_with_facebook_html: 'Log in with <span class="logo">Facebook<span>'
       log_in_with_developer_html: 'Log in with <span class="logo">Developer<span>'
       log_in_with_email_html: '<p>If you would prefer to log in with a username and password, please fill in the form below:</p>'
+    new:
+      title: 'Sign up'
+    edit:
+      title: 'Edit details'
+    create:
+      notice: 'Login created'
+    update:
+      notice: 'Details updated'
+    destroy:
+      notice: 'Login details deleted'

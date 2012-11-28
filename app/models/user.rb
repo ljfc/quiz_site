@@ -1,13 +1,19 @@
 class User < ActiveRecord::Base
-  has_secure_password
+  attr_accessible :email, :display_name
 
-  attr_accessible :email, :password, :password_confirmation
+  has_many :identities, inverse_of: :user,
+    dependent: :nullify
 
   validates :email,
+    presence: true,
     uniqueness: true
 
   def regular?
-    !self.admin? && !self.editor?
+    !admin? && !editor?
+  end
+
+  def self.from_identity(identity)
+    User.create(email: identity.email, display_name: identity.name)
   end
 
 end

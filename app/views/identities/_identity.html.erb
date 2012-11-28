@@ -1,0 +1,48 @@
+<div class="object identity" data-object-class="identity" data-object-id="<%= identity.to_param %>">
+
+  <div>
+    <%= t '.user', default: :'activerecord.attributes.identity.user' %>:
+    <span class="attribute" data-attribute-name="user">
+      <%= identity.user %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.provider', default: :'activerecord.attributes.identity.provider' %>:
+    <span class="attribute" data-attribute-name="provider">
+      <%= identity.provider %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.unique_identifier', default: :'activerecord.attributes.identity.unique_identifier' %>:
+    <span class="attribute" data-attribute-name="unique_identifier">
+      <%= identity.unique_identifier %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.password_digest', default: :'activerecord.attributes.identity.password_digest' %>:
+    <span class="attribute" data-attribute-name="password_digest">
+      <%= identity.password_digest %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.image_url', default: :'activerecord.attributes.identity.image_url' %>:
+    <span class="attribute" data-attribute-name="image_url">
+      <%= identity.image_url %>
+    </span>
+  </div>
+
+  <div>
+    <%= t '.info', default: :'activerecord.attributes.identity.info' %>:
+    <span class="attribute" data-attribute-name="info">
+      <%= identity.info %>
+    </span>
+  </div>
+
+  <%= link_to t('.edit'), edit_identity_path(identity), remote: true if can? :edit, identity %>
+
+</div>
+

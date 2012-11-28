@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div>
+    <h2><%= t('.sign_up_with_facebook') %></h2>
+    <%= link_to t('.click_here_to_sign_up_with_facebook'), 'auth/facebook' %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email, size: nil %>

@@ -37,8 +37,8 @@ input[type="submit"]
   }
 
   &.large,
-  .site.index &,
-  .responses.new &
+  .site.index .page &,
+  .responses.new .page &
   {
     font-size: 48px;
   }

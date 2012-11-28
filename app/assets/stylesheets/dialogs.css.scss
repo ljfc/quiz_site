@@ -9,7 +9,8 @@
   width: 100%;
   height: 100%;
   background: rgb(220,220,220);
-  background: rgba(220,220,220,0.8);
+  background: rgba(220,220,220,0.9);
+  z-index: 2;
 }
 .dialog {
   width: 480px;
@@ -20,5 +21,4 @@
   overflow-y: scroll;
   overflow-x: hidden;
   background: rgb(255,255,255);
-  background: rgba(255,255,255,0.8);
 }

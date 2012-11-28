@@ -1,0 +1,5 @@
+<%= javascript_flash_messages %>
+
+$('.object.identity').filter(function() {
+  return $(this).data('object-id') == '<%= @identity.to_param' %>
+}).slideUp();

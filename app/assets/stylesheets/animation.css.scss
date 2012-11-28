@@ -1,10 +1,11 @@
 // Pervasive quick animation to give a consistent 'feel'.
-*
+a,
+input
 {
   // Compatible browsers will animate these style changes.
-  transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -ie-transition: all 0.2s;
+  transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  -ie-transition: all 0.1s;
 }

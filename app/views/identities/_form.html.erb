@@ -1,5 +1,4 @@
-<%= heading t('.title') %>
-
+<%= form_tag('/auth/identity/register') do |f| %>
   <% if @identity.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this identity from being saved:</h2>
@@ -26,15 +25,23 @@
     </ul>
   </div>
 
-<%= form_tag('/auth/identity/callback') do |f| %>
   <%= t('.log_in_with_email_html') %>
+  <%= link_to "Create an account", '/auth/identity/register' %>
   <div class="field">
-    <%= label_tag :auth_key, t('.auth_key') %><br />
-    <%= text_field_tag :auth_key, params[:email] %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @identity.name %>
+  </div>
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, @identity.email %>
   </div>
   <div class="field">
     <%= label_tag :password %><br />
     <%= password_field_tag :password %>
+  </div>
+  <div class="field">
+    <%= label_tag :password_confirmation %><br />
+    <%= password_field_tag :password_confirmation %>
   </div>
   <div class="actions">
     <%= submit_tag %>
