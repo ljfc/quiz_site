@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128103112) do
+ActiveRecord::Schema.define(:version => 20121129132153) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,9 +64,9 @@ ActiveRecord::Schema.define(:version => 20121128103112) do
   create_table "possible_answers", :force => true do |t|
     t.integer  "question_id"
     t.text     "text"
-    t.boolean  "correct"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.boolean  "correct",     :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   add_index "possible_answers", ["question_id"], :name => "index_possible_answers_on_question_id"

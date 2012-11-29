@@ -9,6 +9,8 @@ en:
     index:
       title: 'Quizzes'
       new: 'Add a new quiz'
+    show:
+      title: 'Quiz results'
     new:
       title: 'New quiz'
     edit:

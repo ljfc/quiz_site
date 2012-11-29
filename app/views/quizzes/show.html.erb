@@ -1,5 +1,36 @@
 <%= heading t('.title') %>
 
-<%= render @quiz %>
+<h2 class="quiz-name">
+  <%= t('.results_for_quiz', quiz: @quiz.name) %>
+</h2>
+
+<div class="quiz-introduction">
+  <%= simple_format @quiz.introduction %>
+</div>
+
+<h3>
+  <%= t('.your_answers') %>
+</h3>
+
+<ol class="responses">
+<% @responses.each do |response| -%>
+  <li>
+    <div class="question">
+    <%= render response.question %>
+    </div>
+    <div class="answer_given">
+    <%= render response.answer %>
+    </div>
+    <div class="verdict">
+    <% if response.answer.correct? -%>
+      <%= t('correct_html') %>
+    <% else -%>
+      <%= t('incorrect_html') %>
+      <%= render response.question.correct_answer %>
+    <% end -%>
+    </div>
+  </li>
+<% end -%>
+</ol>
 
 <%= link_to t('.index'), quizzes_path %>

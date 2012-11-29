@@ -8,6 +8,7 @@ class Ability
     can :index, :site
     can [:new, :create], Identity # To allow sign up.
     can [:new, :create], Response # To allow pre-sign-up quiz answering.
+    can [:show], Quiz # To view the results.
 
     if !user.new_record? && user.regular? # Normal logged-in user.
       # Currently there isn't actually anything else for them to do beyond a logged out user.

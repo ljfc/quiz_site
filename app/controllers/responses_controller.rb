@@ -4,17 +4,25 @@ class ResponsesController < ApplicationController
   load_and_authorize_resource # NOT through: :question, as the link is through the, perhaps unknown, possible_answer.
   respond_to :html, :js
 
+  before_filter :set_user_and_session, only: [:new, :create]
+
   def new
-    respond_with @response
+    # The user is not allowed to respond any more if they have already done so.
+    if @quiz.done?(@response.user, @response.session_id)
+      respond_with @response do |format|
+        format.html { redirect_to quiz_path(@quiz) }
+      end
+    else
+      respond_with @response
+    end
   end
+
   def create
-    @response.user = current_user if current_user
-    @response.session_id = session[:session_id] # So we can group answers without a user.
     flash[:notice] = I18n.t('responses.create.notice') if @response.save
     if @question.next_question
       respond_with @response, location: new_quiz_question_response_path(@quiz, @question.next_question)
     else
-      respond_with @response, location: root_path
+      respond_with @response, location: quiz_path(@quiz) # This will show them the quiz results and tell them what to do next.
     end
   end
 
@@ -39,4 +47,12 @@ class ResponsesController < ApplicationController
     flash[:notice] = I18n.t('responses.destroy.notice') if @response.destroy
     respond_with @response
   end
+
+private
+
+  def set_user_and_session
+    @response.user = current_user if current_user
+    @response.session_id = request.session_options[:id] # So we can group answers without a user.
+  end
+
 end

@@ -17,7 +17,15 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    respond_with @quiz
+    # We need to either show results or start the quiz, depending on if it's done.
+    if @quiz.done?(current_user, request.session_options[:id])
+      @responses = @quiz.responses_for_user_or_session(current_user, request.session_options[:id])
+      respond_with @quiz
+    else
+      respond_with @quiz do |format|
+        format.html { redirect_to new_quiz_question_response_path(@quiz, @quiz.questions.first) }
+      end
+    end
   end
 
   def edit

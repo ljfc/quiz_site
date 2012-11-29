@@ -1,11 +1,11 @@
 class Question < ActiveRecord::Base
   attr_accessible :text, :more_info
 
-  belongs_to :quiz
+  belongs_to :quiz, inverse_of: :questions
 
-  has_many :possible_answers
+  has_many :possible_answers, inverse_of: :question
 
-  has_many :responses,
+  has_many :responses, through: :possible_answers,
     dependent: :restrict
 
   validates :order,
@@ -18,6 +18,10 @@ class Question < ActiveRecord::Base
 
   def next_question
     self.quiz.questions.find_by_order(self.order + 1)
+  end
+
+  def correct_answer
+    self.possible_answers.where(correct: true).first
   end
 
 protected
