@@ -1,4 +1,3 @@
-# LEOC custom model
 class AdminUser < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
