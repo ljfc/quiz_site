@@ -2,4 +2,4 @@
 
 <%= render @response %>
 
-<%= link_to t('.index'), responses_path %>
+<%= link_to t('.index'), quiz_question_responses_path(@response.quiz, @response.question) %>

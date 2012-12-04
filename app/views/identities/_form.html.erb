@@ -28,19 +28,19 @@
   <%= t('.log_in_with_email_html') %>
   <%= link_to "Create an account", '/auth/identity/register' %>
   <div class="field">
-    <%= label_tag :name %>
+    <%= label_tag :name, t('.name_html') %>
     <%= text_field_tag :name, @identity.name %>
   </div>
   <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, @identity.email %>
+    <%= label_tag :unique_identifier, t('.unique_identifier_html') %><br />
+    <%= text_field_tag :unique_identifier, @identity.unique_identifier %>
   </div>
   <div class="field">
-    <%= label_tag :password %><br />
+    <%= label_tag :password, t('.password_html') %><br />
     <%= password_field_tag :password %>
   </div>
   <div class="field">
-    <%= label_tag :password_confirmation %><br />
+    <%= label_tag :password_confirmation, t('.password_confirmation_html') %><br />
     <%= password_field_tag :password_confirmation %>
   </div>
   <div class="actions">

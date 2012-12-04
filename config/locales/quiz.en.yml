@@ -11,6 +11,8 @@ en:
       new: 'Add a new quiz'
     show:
       title: 'Quiz results'
+      sign_up_to_see_how_you_scores_compare: 'Sign up if you want to see how your scores compare, and take more tests.'
+      sign_up: 'Sign up here'
     new:
       title: 'New quiz'
     edit:

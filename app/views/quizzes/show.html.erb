@@ -4,6 +4,11 @@
   <%= t('.results_for_quiz', quiz: @quiz.name) %>
 </h2>
 
+<div>
+  <%= t('.sign_up_to_see_how_you_scores_compare') %>
+  <%= link_to t('.sign_up'), assign_session_to_user_path %>
+</div>
+
 <div class="quiz-introduction">
   <%= simple_format @quiz.introduction %>
 </div>

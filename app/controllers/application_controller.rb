@@ -13,4 +13,9 @@ private
     @current_user = nil
   end
 
+  def current_session_id
+    @current_session_id ||= request.session_options[:session_id]
+    @current_session_id ||= request.session_options[:id]
+  end
+
 end

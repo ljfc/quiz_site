@@ -36,23 +36,21 @@ class ResponsesController < ApplicationController
   end
 
   def edit
-    respond_with @response
+    raise "Responses cannot be edited"
   end
   def update
-    flash[:notice] = I18n.t('responses.update.notice') if @response.update_attributes(params[:response])
-    respond_with @response
+    raise "Responses cannot be updated"
   end
 
   def destroy
-    flash[:notice] = I18n.t('responses.destroy.notice') if @response.destroy
-    respond_with @response
+    raise "Responses cannot be destroyed"
   end
 
 private
 
   def set_user_and_session
     @response.user = current_user if current_user
-    @response.session_id = request.session_options[:id] # So we can group answers without a user.
+    @response.session_id = current_session_id # So we can group answers without a user.
   end
 
 end

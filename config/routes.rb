@@ -23,6 +23,7 @@ QuizSite::Application.routes.draw do
   get 'signup', to: 'identities#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'signup/post-quiz', to: 'sessions#assign_to_user', as: 'assign_session_to_user'
 
 
   # Utility routes.
@@ -31,5 +32,6 @@ QuizSite::Application.routes.draw do
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
+
 
 end

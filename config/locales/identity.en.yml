@@ -11,6 +11,10 @@ en:
       log_in_with_facebook_html: 'Log in with <span class="logo">Facebook<span>'
       log_in_with_developer_html: 'Log in with <span class="logo">Developer<span>'
       log_in_with_email_html: '<p>If you would prefer to log in with a username and password, please fill in the form below:</p>'
+      name_html: 'Display name'
+      unique_identifier_html: 'Email address'
+      password_html: 'Password'
+      password_confirmation_html: 'Confirm password'
     new:
       title: 'Sign up'
     edit:
