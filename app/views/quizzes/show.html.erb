@@ -28,9 +28,9 @@
     </div>
     <div class="verdict">
     <% if response.answer.correct? -%>
-      <%= t('correct_html') %>
+      <%= t('.correct_html') %>
     <% else -%>
-      <%= t('incorrect_html') %>
+      <%= t('.incorrect_html') %>
       <%= render response.question.correct_answer %>
     <% end -%>
     </div>

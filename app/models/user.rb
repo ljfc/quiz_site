@@ -36,4 +36,11 @@ class User < ActiveRecord::Base
     end
   end
 
+
+# Scopes
+
+  def self.top_scorers(limit = 3)
+    joins(:answers).where(possible_answers: { correct: true }).group(:user_id).select('users.*, count(*) AS `correct_count`').order('correct_count DESC').limit(limit)
+  end
+
 end

@@ -1,0 +1,13 @@
+<%= heading t('.title') %>
+
+<section>
+<%= t('.intro_html') %>
+</section>
+
+<ol>
+  <% @users.each do |user| -%>
+  <li>
+    <%= user.display_name %> (<%= user.correct_count %>)
+  </li>
+  <% end -%>
+</ol>

@@ -25,10 +25,14 @@ QuizSite::Application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'signup/post-quiz', to: 'sessions#assign_to_user', as: 'assign_session_to_user'
 
-
-  # Utility routes.
+  
+  # Singular pages
 
   root to: 'site#index'
+  get 'leaderboard', to: 'leaderboard#index'
+
+
+  # Utility routes.
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config

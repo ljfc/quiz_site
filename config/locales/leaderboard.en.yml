@@ -1,0 +1,5 @@
+en:
+  leaderboard:
+    index:
+      title: 'Leaderboard'
+      intro_html: '<p>Here are the top-scoring users</p>'

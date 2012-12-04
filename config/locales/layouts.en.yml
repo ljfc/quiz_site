@@ -2,3 +2,6 @@ en:
   layouts:
     application:
       log_out: 'Log out'
+      logged_in_as: 'Logged in as %{user}'
+      log_in: 'Log in'
+      sign_up: 'Sign up'
