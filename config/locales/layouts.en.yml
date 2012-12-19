@@ -1,7 +1,10 @@
 en:
   layouts:
     application:
+      home: 'Home'
+      leaderboard: 'Leaderboard'
       log_out: 'Log out'
       logged_in_as: 'Logged in as %{user}'
       log_in: 'Log in'
+      quizzes: 'Quizzes'
       sign_up: 'Sign up'

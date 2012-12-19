@@ -9,9 +9,10 @@ class Ability
     can [:new, :create], Identity # To allow sign up.
     can [:new, :create], Response # To allow pre-sign-up quiz answering.
     can [:show], Quiz # To view the results.
+    can :index, :leaderboard
 
     if !user.new_record? && user.regular? # Normal logged-in user.
-      # Currently there isn't actually anything else for them to do beyond a logged out user.
+      can :index, Quiz # To find new quizzes.
       can :manage, User, id: user.id
     elsif user.admin? # Straight-up superuser, nothing is forbidden.
       can :manage, :all

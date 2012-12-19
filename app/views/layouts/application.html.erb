@@ -30,6 +30,8 @@
     <nav>
       <ul class="main">
         <li><%= link_to t('.home'), root_path %></li>
+        <%= content_tag :li, link_to(t('.quizzes'), quizzes_path) if can? :index, Quiz %>
+        <%= content_tag :li, link_to(t('.leaderboard'), leaderboard_path) if can? :index, :leaderboard %>
       </ul>
       <ul class="authentication">
         <% if current_user -%>

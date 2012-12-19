@@ -29,6 +29,8 @@ protected
   def add_ordering
     if self.order == 0 && self.quiz.questions.any?
       self.order = self.quiz.questions.maximum('order') + 1
+    elsif self.order == 0 && self.quiz.questions.empty?
+      self.order = 1
     end
   end
 
