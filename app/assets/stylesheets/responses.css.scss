@@ -1,4 +1,6 @@
-.responses.new {
+.responses.new,
+.responses.create // Create as well, because errors will re-render the 'new' action.
+{
   .page
   {
     padding-left: 222px;
